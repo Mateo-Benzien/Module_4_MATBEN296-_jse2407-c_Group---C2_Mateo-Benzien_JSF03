@@ -1,7 +1,3 @@
-Here’s a README template tailored for your Vue 3 e-commerce project, formatted in the same style as the provided example:
-
----
-
 # Vue 3 E-Commerce Project
 
 ## What’s This About?
