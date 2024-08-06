@@ -17,15 +17,12 @@ Hey there! This is an e-commerce web app built with Vue 3. It lets you browse pr
 
 - **index.html:** The main HTML file.
 - **App.vue:** The root Vue component for the app.
-- **components/**
-  - **ProductCard.vue:** Displays individual product cards.
-  - **ProductDetail.vue:** Shows detailed product information.
-  - **ProductList.vue:** Manages the grid of products, including filtering and sorting.
-  - **Filter.vue:** Allows filtering products by category.
-  - **Sort.vue:** Handles sorting products by price.
-- **store/**
-  - **productStore.js:** Manages product state and API interactions.
-- **assets/**
+- 
+  - **ProductCard:** Displays individual product cards.
+  - **ProductDetail:** Shows detailed product information.
+  - **ProductList:** Manages the grid of products, including filtering and sorting.
+  - **Filter:** Allows filtering products by category.
+  - **Sort:** Handles sorting products by price.
   - **styles.css:** Contains global styles for the app.
 
 ## Getting Started
