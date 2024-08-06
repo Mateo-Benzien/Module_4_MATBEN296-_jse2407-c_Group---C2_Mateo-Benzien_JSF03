@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Header Component -->
+    <!-- Header Section -->
     <header class="header">
       <div class="header-content">
         <div class="brand">
@@ -37,10 +37,10 @@
         </div>
       </div>
     </header>
-
+                                            
     <!-- Filter and Sort Wrapper -->
     <div class="filter-sort-container">
-      <!-- Filter Component -->
+      <!-- Filter Section -->
       <div class="filter">
         <select class="filter-select" v-model="selectedCategory" @change="filterProducts">
           <option value="">Select Category</option>
@@ -48,7 +48,7 @@
           <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
         </select>
       </div>
-      <!-- Sort Component -->
+      <!-- Sort Section -->
       <div class="sort">
         <label for="sort-select" class="sort-label">Sort by:</label>
         <select id="sort-select" class="sort-select" v-model="selectedSort" @change="sortProducts">
@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <!-- Product List Component -->
+    <!-- Product List Section -->
     <div class="product-list-container">
       <div class="product-list">
         <div
@@ -86,6 +86,11 @@
         </div>
       </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <p>© 2024 SwiftCart. All rights reserved.</p>
+    </footer>
   </div>
 </template>
 
@@ -134,12 +139,10 @@ export default {
       }
     },
     addToCart(product) {
-      // Add to cart functionality
       this.cartCount++;
     },
-    goToProduct(productId) {
-      // Navigate to product detail page
-      this.$router.push({ name: 'ProductDetail', params: { id: productId } });
+    goToProduct(id) {
+      this.$router.push({ name: 'ProductDetailView', params: { id } });
     },
   },
 };
@@ -147,103 +150,120 @@ export default {
 
 <style scoped>
 .header {
-  /*header styles */
+  background: #f8f9fa;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
+
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .brand {
   display: flex;
   align-items: center;
 }
+
 .brand-logo {
   width: 50px;
-  height: 50px;
+  height: auto;
+  margin-right: 10px;
 }
+
 .header-title {
-  margin-left: 10px;
+  font-size: 24px;
+  color: #333;
 }
+
 .header-right {
   display: flex;
   align-items: center;
 }
-.wishlist {
-  margin-right: 20px;
-}
-.cart {
-  display: flex;
-  align-items: center;
-}
+
 .cart-icon {
   width: 24px;
   height: 24px;
+  margin-right: 10px;
 }
+
 .cart-badge {
+  background: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0 10px;
   margin-left: 5px;
 }
-.login {
-  margin-left: 20px;
+
+.login a {
+  color: #007bff;
+  text-decoration: none;
 }
+
 .filter-sort-container {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  padding: 10px;
 }
-.filter, .sort {
-  display: flex;
-  align-items: center;
-}
-.filter-select, .sort-select {
-  padding: 5px;
-}
+
 .product-list-container {
-  display: flex;
-  justify-content: center;
+  padding: 20px;
 }
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted min-width for larger cards */
-  gap: 20px;
-}
+
 .product-card {
   border: 1px solid #ddd;
-  padding: 20px;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
   text-align: center;
 }
+
 .product-image {
-  width: 150px; /* Increased width */
-  height: 150px; /* Increased height */
-  object-fit: cover;
-  margin-bottom: 10px; 
+  width: 100%;
+  height: auto;
 }
-.product-title {
-  font-size: 1.2em;
+
+.rating {
   margin: 10px 0;
 }
-.rating {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
+
 .star {
-  font-size: 1.5em;
-  color: #ddd;
+  color: #ffd700;
+  font-size: 20px;
 }
+
 .star.filled {
-  color: #ff0;
+  color: #ffd700;
 }
+
 .product-price {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
 }
+
 .product-category {
-  font-size: 0.9em;
-  color: #888;
-  margin-bottom: 10px;
+  font-size: 14px;
+  color: #777;
 }
-.add-to-cart {
-  margin-right: 10px;
+
+.add-to-cart, .favorites-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover, .favorites-btn:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
 }
 </style>

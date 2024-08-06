@@ -20,6 +20,6 @@ export default {
 </script>
 
 <style>
-/* You can include some global styles or import your styles here */
+/* Global styles can be placed here */
 @import './styles.css';
 </style>
